@@ -1,0 +1,642 @@
+/* compra-estilos.css - Estilos exclusivos para la página de compra */
+
+/* Variables (igual que en estilos.css) */
+:root {
+    --blanco: #ffffff;
+    --gris: #d9d9db;
+    --gris-osc: #7a7a7d;
+    --negro: #111111;
+    --borde: #e8e8e9;
+    --shadow: 0 6px 18px rgba(0, 0, 0, .06);
+    --exito: #28a745;
+}
+
+/* ===============================
+   PROGRESO DE COMPRA
+================================ */
+.progreso-compra {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.pasos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.paso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.paso .numero {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gris);
+    color: var(--negro);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    margin-bottom: 8px;
+    transition: all 0.3s;
+}
+
+.paso.activo .numero {
+    background: var(--negro);
+    color: var(--blanco);
+}
+
+.paso .texto {
+    font-size: 0.9rem;
+    color: var(--gris-osc);
+    font-weight: 500;
+}
+
+.paso.activo .texto {
+    color: var(--negro);
+    font-weight: 600;
+}
+
+.linea-paso {
+    flex: 1;
+    height: 2px;
+    background: var(--gris);
+    margin: 0 10px;
+    position: relative;
+    top: -20px;
+}
+
+/* ===============================
+   CONTENEDOR PRINCIPAL
+================================ */
+.compra-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 50px;
+}
+
+.compra-contenedor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* ===============================
+   RESUMEN DE COMPRA
+================================ */
+.resumen-compra {
+    background: var(--blanco);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+    height: fit-content;
+}
+
+.resumen-compra h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: var(--negro);
+    border-bottom: 2px solid var(--gris);
+    padding-bottom: 15px;
+}
+
+/* Item de compra */
+.item-compra {
+    display: flex;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--borde);
+    position: relative;
+}
+
+.item-imagen {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.item-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-info h3 {
+    margin: 0 0 5px 0;
+    color: var(--negro);
+}
+
+.artista, .tecnica {
+    color: var(--gris-osc);
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.cantidad-precio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.contador {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gris);
+    padding: 5px 10px;
+    border-radius: 8px;
+}
+
+.btn-contador {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.btn-contador:hover {
+    background: var(--gris-osc);
+    color: var(--blanco);
+}
+
+.cantidad {
+    font-weight: 600;
+    min-width: 20px;
+    text-align: center;
+}
+
+.precio {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--negro);
+}
+
+.btn-eliminar {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    background: var(--gris);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+}
+
+.btn-eliminar:hover {
+    background: var(--gris-osc);
+    color: var(--blanco);
+}
+
+/* Resumen de costos */
+.resumen-costos {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid var(--borde);
+}
+
+.costo-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: var(--gris-osc);
+}
+
+.costo-item.total {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--negro);
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid var(--negro);
+}
+
+/* Información adicional */
+.info-adicional {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid var(--borde);
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.info-item .icono {
+    background: var(--negro);
+    color: var(--blanco);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+}
+
+.info-item strong {
+    color: var(--negro);
+    display: block;
+    margin-bottom: 3px;
+}
+
+.info-item p {
+    color: var(--gris-osc);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ===============================
+   FORMULARIO DE COMPRA
+================================ */
+.formulario-compra {
+    background: var(--blanco);
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: var(--shadow);
+}
+
+.formulario-compra h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: var(--negro);
+    border-bottom: 2px solid var(--gris);
+    padding-bottom: 15px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--negro);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--blanco);
+    color: var(--negro);
+    transition: border 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--negro);
+}
+
+.form-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* Método de pago */
+.metodo-pago {
+    margin: 30px 0;
+    padding: 20px;
+    background: var(--gris);
+    border-radius: 12px;
+}
+
+.metodo-pago h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--negro);
+}
+
+.opciones-pago {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.opcion-pago {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.opcion-pago:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.opcion-pago input[type="radio"] {
+    display: none;
+}
+
+.opcion-pago .checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--gris-osc);
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+}
+
+.opcion-pago input[type="radio"]:checked + .checkmark {
+    border-color: var(--negro);
+}
+
+.opcion-pago input[type="radio"]:checked + .checkmark:after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: var(--negro);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Términos */
+.terminos {
+    margin: 25px 0;
+}
+
+.checkbox-terminos {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.checkbox-terminos input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-terminos .checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--gris-osc);
+    border-radius: 4px;
+    flex-shrink: 0;
+    position: relative;
+    margin-top: 2px;
+}
+
+.checkbox-terminos input[type="checkbox"]:checked + .checkmark {
+    background: var(--negro);
+    border-color: var(--negro);
+}
+
+.checkbox-terminos input[type="checkbox"]:checked + .checkmark:after {
+    content: '✓';
+    color: var(--blanco);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.9rem;
+}
+
+.checkbox-terminos a {
+    color: var(--negro);
+    text-decoration: underline;
+}
+
+/* Botón finalizar */
+.btn-finalizar {
+    width: 100%;
+    padding: 16px;
+    background: var(--negro);
+    color: var(--blanco);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    margin-top: 20px;
+}
+
+.btn-finalizar:hover {
+    opacity: 0.9;
+}
+
+.seguridad {
+    text-align: center;
+    margin-top: 20px;
+    color: var(--gris-osc);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.icono-seguridad {
+    font-size: 1.2rem;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contenido {
+    background: var(--blanco);
+    padding: 40px;
+    border-radius: 16px;
+    max-width: 500px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.icono-exito {
+    width: 80px;
+    height: 80px;
+    background: var(--exito);
+    color: var(--blanco);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    margin: 0 auto 25px;
+}
+
+.modal-contenido h2 {
+    color: var(--negro);
+    margin: 0 0 15px;
+}
+
+.modal-contenido p {
+    color: var(--gris-osc);
+    margin: 10px 0;
+    line-height: 1.5;
+}
+
+.btn-modal {
+    padding: 12px 30px;
+    background: var(--negro);
+    color: var(--blanco);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    margin-top: 25px;
+    font-size: 1rem;
+}
+
+.btn-modal:hover {
+    opacity: 0.9;
+}
+
+
+  /*RESPONSIVIDAD*/
+
+@media (max-width: 992px) {
+    .compra-contenedor {
+        gap: 30px;
+    }
+    
+    .item-imagen {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .precio {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .compra-contenedor {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .progreso-compra {
+        margin: 20px auto;
+    }
+    
+    .pasos {
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    .paso .texto {
+        font-size: 0.8rem;
+    }
+    
+    .linea-paso {
+        display: none;
+    }
+    
+    .form-doble {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .cantidad-precio {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .resumen-compra,
+    .formulario-compra {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .compra-main {
+        padding: 0 15px 30px;
+    }
+    
+    .progreso-compra {
+        padding: 0 10px;
+    }
+    
+    .paso .numero {
+        width: 32px;
+        height: 32px;
+        font-size: 0.9rem;
+    }
+    
+    .paso .texto {
+        font-size: 0.75rem;
+    }
+    
+    .item-compra {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .item-imagen {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .btn-eliminar {
+        top: 10px;
+        right: 10px;
+    }
+    
+    .modal-contenido {
+        padding: 25px;
+    }
+    
+    .icono-exito {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+}

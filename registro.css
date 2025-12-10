@@ -1,83 +1,420 @@
+/* registro.css - Estilos específicos para registro */
+
+/* Variables (igual que en estilos.css) */
 :root {
-  --blanco: #ffffff;
-  --gris: #d9d9db;
-  --gris-osc: #7a7a7d;
-  --negro: #111111;
-  --borde: #e8e8e9;
-  --shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    --blanco: #ffffff;
+    --gris: #d9d9db;
+    --gris-osc: #7a7a7d;
+    --negro: #111111;
+    --borde: #e8e8e9;
+    --shadow: 0 6px 18px rgba(0, 0, 0, .06);
+    --exito: #28a745;
+    --error: #ff4444;
+    --info: #17a2b8;
 }
 
+/* ===============================
+   ESTILOS GENERALES PARA REGISTRO
+================================ */
 body {
-  background: var(--blanco);
-  font-family: Inter, Arial, sans-serif;
-  margin: 0;
-  color: var(--negro);
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e9 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: Inter, Arial, sans-serif;
+    margin: 0;
+    color: var(--negro);
 }
 
 .header {
-  width: 100%;
-  padding: 15px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid var(--borde);
+    background: var(--blanco);
+    box-shadow: var(--shadow);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: center;
 }
 
 .logo {
-  height: 55px;
-  object-fit: contain;
+    height: 50px;
+    width: auto;
+    object-fit: contain;
 }
 
-.formulario {
-  max-width: 400px;
-  margin: 60px auto;
-  padding: 30px;
-  background: var(--gris);
-  border-radius: 12px;
-  box-shadow: var(--shadow);
-  text-align: center;
+/* ===============================
+   CONTENEDOR PRINCIPAL
+================================ */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
-.formulario h2 {
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: 700;
-  color: var(--negro);
+.registro-container {
+    background: var(--blanco);
+    border-radius: 16px;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: var(--shadow);
+    animation: slideUp 0.5s ease-out;
 }
 
-.formulario form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.formulario input {
-  padding: 12px;
-  border: 1px solid var(--borde);
-  border-radius: 8px;
-  font-size: 15px;
-  background: var(--blanco);
-  color: var(--negro);
-  box-shadow: var(--shadow);
+/* ===============================
+   CABECERA DEL REGISTRO
+================================ */
+.registro-header {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.formulario input::placeholder {
-  color: var(--gris-osc);
-  font-style: italic;
+.registro-header h2 {
+    color: var(--negro);
+    margin: 0 0 10px;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
-.formulario button {
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background: var(--negro);
-  color: var(--blanco);
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s ease;
-  box-shadow: var(--shadow);
+.registro-header p {
+    color: var(--gris-osc);
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
-.formulario button:hover {
-  opacity: 0.8;
+/* ===============================
+   FORMULARIO
+================================ */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--negro);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--borde);
+    border-radius: 8px;
+    font-size: 1rem;
+    background: var(--blanco);
+    color: var(--negro);
+    transition: all 0.3s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--negro);
+    box-shadow: 0 0 0 3px rgba(17, 17, 17, 0.1);
+}
+
+.form-group input.error {
+    border-color: var(--error);
+}
+
+.form-group input.success {
+    border-color: var(--exito);
+}
+
+/* ===============================
+   MENSAJES DE ERROR
+================================ */
+.error-message {
+    color: var(--error);
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none;
+    font-weight: 500;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* ===============================
+   BOTÓN DE REGISTRO
+================================ */
+.btn-registrar {
+    width: 100%;
+    padding: 14px;
+    background: var(--negro);
+    color: var(--blanco);
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.btn-registrar:hover {
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-registrar:active {
+    transform: translateY(0);
+}
+
+.btn-registrar:disabled {
+    background: var(--gris);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* ===============================
+   MENSAJE DE ÉXITO
+================================ */
+.mensaje-exito {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 8px;
+    color: #155724;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+.mensaje-exito.show {
+    display: block;
+}
+
+.mensaje-exito strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.mensaje-exito p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===============================
+   ENLACE DE LOGIN
+================================ */
+.login-link {
+    text-align: center;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid var(--borde);
+}
+
+.login-link p {
+    color: var(--gris-osc);
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.login-link a {
+    color: var(--negro);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+    color: #333;
+}
+
+/* ===============================
+   ANIMACIONES DE CARGA
+================================ */
+.loading {
+    position: relative;
+    color: transparent !important;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--blanco);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* ===============================
+   INDICADORES DE FUERZA DE CONTRASEÑA
+================================ */
+.password-strength {
+    margin-top: 8px;
+    height: 4px;
+    background: var(--gris);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.password-strength-bar {
+    height: 100%;
+    width: 0%;
+    border-radius: 2px;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+.strength-weak {
+    background-color: var(--error);
+    width: 33%;
+}
+
+.strength-medium {
+    background-color: #ffc107;
+    width: 66%;
+}
+
+.strength-strong {
+    background-color: var(--exito);
+    width: 100%;
+}
+
+.strength-text {
+    font-size: 0.8rem;
+    margin-top: 4px;
+    text-align: right;
+}
+
+/* ===============================
+   RESPONSIVIDAD
+================================ */
+@media (max-width: 768px) {
+    .registro-container {
+        padding: 30px;
+        margin: 20px;
+    }
+    
+    .registro-header h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .registro-container {
+        padding: 25px 20px;
+        margin: 15px;
+        border-radius: 12px;
+    }
+
+    .registro-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .registro-header p {
+        font-size: 0.9rem;
+    }
+
+    .form-group input {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+
+    .btn-registrar {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+
+    .header {
+        padding: 10px 15px;
+    }
+    
+    .logo {
+        height: 40px;
+    }
+}
+
+/* ===============================
+   ESTILOS PARA INPUTS CON ESTADOS
+================================ */
+.form-group input:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: var(--error);
+}
+
+.form-group input:valid:not(:focus):not(:placeholder-shown) {
+    border-color: var(--exito);
+}
+
+/* ===============================
+   MEJORAS DE ACCESIBILIDAD
+================================ */
+.form-group input:focus-visible {
+    outline: 2px solid var(--negro);
+    outline-offset: 2px;
+}
+
+.btn-registrar:focus-visible {
+    outline: 2px solid var(--negro);
+    outline-offset: 2px;
+}
+
+.login-link a:focus-visible {
+    outline: 2px solid var(--negro);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* ===============================
+   TRANSICIONES SUAVES
+================================ */
+.form-group input,
+.btn-registrar,
+.mensaje-exito {
+    transition: all 0.3s ease;
+}
+
+/* ===============================
+   ESTILOS PARA PLACEHOLDERS
+================================ */
+.form-group input::placeholder {
+    color: var(--gris-osc);
+    opacity: 0.7;
+}
+
+.form-group input:focus::placeholder {
+    opacity: 0.5;
 }

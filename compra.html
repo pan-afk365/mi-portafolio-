@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprar Obra - GaleryArt</title>
+    <link rel="stylesheet" href="compra.css">
+    <link rel="stylesheet" href="estilos.css"> <!-- Para mantener el header/footer -->
+</head>
+<body>
+    <!-- Header igual al de la página principal -->
+    <header class="header">
+        <img class="logo" src="Elegant logo for an .png" alt="Logo de GaleryArt">
+        
+        <button class="hamburger" id="hamburger">
+            ☰
+        </button>
+        
+        <nav class="acciones-usuario" id="menu">
+            <a href="registro.html" class="btn-usuario">Mi Cuenta</a>
+            <a href="carrito.html" class="btn-usuario">Carrito</a>
+        </nav>
+    </header>
+
+    <!-- Contenido específico de compra -->
+    <main class="compra-main">
+        <!-- Progreso del pedido -->
+        <div class="progreso-compra">
+            <div class="pasos">
+                <div class="paso activo">
+                    <span class="numero">1</span>
+                    <span class="texto">Carrito</span>
+                </div>
+                <div class="linea-paso"></div>
+                <div class="paso">
+                    <span class="numero">2</span>
+                    <span class="texto">Envío</span>
+                </div>
+                <div class="linea-paso"></div>
+                <div class="paso">
+                    <span class="numero">3</span>
+                    <span class="texto">Pago</span>
+                </div>
+                <div class="linea-paso"></div>
+                <div class="paso">
+                    <span class="numero">4</span>
+                    <span class="texto">Confirmación</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor principal -->
+        <div class="compra-contenedor">
+            <!-- Resumen de la compra -->
+            <div class="resumen-compra">
+                <h2>Tu Compra</h2>
+                
+                <div class="item-compra">
+                    <div class="item-imagen">
+                        <img src="La noche estrellada _ Starry night art, Gogh the starry night, Vincent van gogh.jpeg" alt="La Noche Estrellada">
+                    </div>
+                    <div class="item-info">
+                        <h3>LA NOCHE ESTRELLADA</h3>
+                        <p class="artista">Vincent van Gogh • 1889</p>
+                        <p class="tecnica">Óleo sobre lienzo • 73.7 × 92.1 cm</p>
+                        
+                        <div class="cantidad-precio">
+                            <div class="contador">
+                                <button class="btn-contador menos">-</button>
+                                <span class="cantidad">1</span>
+                                <button class="btn-contador mas">+</button>
+                            </div>
+                            <div class="precio">$2,450,000 USD</div>
+                        </div>
+                    </div>
+                    <button class="btn-eliminar">×</button>
+                </div>
+
+                <!-- Resumen de costos -->
+                <div class="resumen-costos">
+                    <div class="costo-item">
+                        <span>Subtotal</span>
+                        <span>$2,450,000 USD</span>
+                    </div>
+                    <div class="costo-item">
+                        <span>Envío</span>
+                        <span>$5,000 USD</span>
+                    </div>
+                    <div class="costo-item">
+                        <span>Seguro</span>
+                        <span>$10,000 USD</span>
+                    </div>
+                    <div class="costo-item total">
+                        <span>TOTAL</span>
+                        <span>$2,465,000 USD</span>
+                    </div>
+                </div>
+
+                <!-- Información adicional -->
+                <div class="info-adicional">
+                    <div class="info-item">
+                        <span class="icono">✓</span>
+                        <div>
+                            <strong>Certificado de autenticidad</strong>
+                            <p>Incluido con tu compra</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="icono">✓</span>
+                        <div>
+                            <strong>Envío asegurado</strong>
+                            <p>Rastreo en tiempo real</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="icono">✓</span>
+                        <div>
+                            <strong>Garantía de devolución</strong>
+                            <p>14 días desde la recepción</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Formulario de compra -->
+            <div class="formulario-compra">
+                <h2>Información de Envío</h2>
+                
+                <form id="form-compra">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    
+                    <div class="form-doble">
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="telefono">Teléfono *</label>
+                            <input type="tel" id="telefono" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="direccion">Dirección *</label>
+                        <input type="text" id="direccion" required>
+                    </div>
+                    
+                    <div class="form-doble">
+                        <div class="form-group">
+                            <label for="ciudad">Ciudad *</label>
+                            <input type="text" id="ciudad" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cp">Código Postal *</label>
+                            <input type="text" id="cp" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="pais">País *</label>
+                        <select id="pais" required>
+                            <option value="">Seleccionar país</option>
+                            <option value="mx">México</option>
+                            <option value="us">Estados Unidos</option>
+                            <option value="es">España</option>
+                            <option value="co">Colombia</option>
+                            <option value="ar">Argentina</option>
+                            <option value="ar">Bolivia </option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="instrucciones">aguna recomendacion</label>
+                        <textarea id="instrucciones" rows="3"></textarea>
+                    </div>
+
+                    <!-- Método de pago -->
+                    <div class="metodo-pago">
+                        <h3>Método de Pago</h3>
+                        <div class="opciones-pago">
+                            <label class="opcion-pago">
+                                <input type="radio" name="pago" value="tarjeta" checked>
+                                <span class="checkmark"></span>
+                                Tarjeta de crédito/débito
+                            </label>
+                            <label class="opcion-pago">
+                                <input type="radio" name="pago" value="transferencia">
+                                <span class="checkmark"></span>
+                                Transferencia bancaria
+                            </label>
+                            <label class="opcion-pago">
+                                <input type="radio" name="pago" value="paypal">
+                                <span class="checkmark"></span>
+                                PayPal
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Términos y condiciones -->
+                    <div class="terminos">
+                        <label class="checkbox-terminos">
+                            <input type="checkbox" id="terminos" required>
+                            <span class="checkmark"></span>
+                            Acepto los <a href="#">términos y condiciones</a> y la <a href="#">política de privacidad</a>
+                        </label>
+                    </div>
+
+                    <!-- Botón final de compra -->
+                    <button type="submit" class="btn-finalizar">FINALIZAR COMPRA</button>
+                    
+                    <div class="seguridad">
+                        <span class="icono-seguridad">🔒</span>
+                        <span>Su pago ha sido realizado de manera segura </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-box">
+            <h4>CONTACTO</h4>
+            <div class="line"></div>
+            <p>compras@galeryart.com</p>
+            <p>+159 73456793</p>
+            <p>Asistencia para compras</p>
+        </div>
+        
+        <div class="footer-box">
+            <h4>GARANTÍAS</h4>
+            <div class="line"></div>
+            <p>Autenticidad verificada</p>
+            <p>Envío asegurado</p>
+            <p>Devoluciones garantizadas</p>
+        </div>
+        
+        <div class="footer-box">
+            <h4>MÉTODOS DE PAGO</h4>
+            <div class="line"></div>
+            <p>Visa • MasterCard • Amex</p>
+            <p>PayPal • Transferencia</p>
+            <p>Pago en 3-6 meses sin intereses</p>
+        </div>
+    </footer>
+    
+    <div class="legal">
+        <span>© 2025 GALERY ART</span>
+        <div class="links">
+            <a href="#">PRIVACIDAD</a>
+            <a href="#">TÉRMINOS</a>
+            <a href="#">COMPRA SEGURA</a>
+        </div>
+    </div>
+
+    <!-- Modal de confirmación -->
+    <div id="modal-exito" class="modal">
+        <div class="modal-contenido">
+            <div class="icono-exito">✓</div>
+            <h2>¡Compra Exitosa!</h2>
+            <p>Tu compra de <strong>"La Noche Estrellada"</strong> ha sido procesada correctamente.</p>
+            <p>Número de orden: <strong>GA2025-789456</strong></p>
+            <p>Recibirás un email de confirmación con todos los detalles.</p>
+            <button id="btn-volver-inicio" class="btn-modal">VOLVER A LA GALERÍA</button>
+        </div>
+    </div>
+
+    <script src="compra.js"></script>
+</body>
+</html>
