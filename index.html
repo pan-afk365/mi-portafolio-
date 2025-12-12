@@ -1,28 +1,25 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GaleryArt</title>
+    <title>Document</title> <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="estilos.css">
 </head>
-
 <body>
-    <header class="header">
-        <img class="logo" src="Elegant logo for an .png" alt="Logo de GaleryArt">
-        
-        <!-- Botón hamburguesa -->
-        <button class="hamburger" id="hamburger">
-            ☰
-        </button>
-        
-        <!-- Menú de acciones -->
-        <nav class="acciones-usuario" id="menu">
-            <a href="registro.html" class="btn-usuario">Crear cuenta</a>
-            <a href="inicioSesion.html" class="btn-usuario">Iniciar sesión</a>
+        <header>
+        <img class="logo" src="Elegant logo for an .png" alt="logo">
+        <button id="abrir"  class="abrir-menu"><i class="bi bi-list"></i></button>
+        <nav class="nav" id="nav" >
+            <button class="cerrar-menu" id="cerrar"><i class="bi bi-x-lg"></i></button>
+            <ul class="nav-list">
+           <li><a href="inicio.html">inicio de sesion</a></li>
+           <li><a href="registro.html">registrarse</a></li>
+           <li><a href="obras.html">Obras Destacadas</a></li>
+            </ul>
         </nav>
+ 
     </header>
-
     <main>
         <section class="coleccion">
             <h2 id="JK">GALERY ART</h2>
@@ -35,11 +32,6 @@
                 <button>Contemporáneo</button>
             </div>
             
-            <div class="buscador">
-                <input type="text" placeholder="¿Qué obra está buscando?" class="input-busqueda">
-                <button class="btn-buscar">Buscar</button>
-            </div>
-            
             <section class="nueva-galeria">
                 <div class="item2">
                     <div class="img-box">
@@ -50,7 +42,7 @@
                 
                 <div class="item2">
                     <div class="img-box">
-                        <img src="En 3d  El Pincel Del Pintor Se Desliza Sobre El Lienzo Como Una Suave Brisa Dejando Estelas De Tonos Vibrantes Cada Uno PNG ,dibujos  3d El Pincel De Los Pintores Se Desliza, Sobre El Lienzo Como Una Suave Brisa Deja.jpeg" class="img" alt="imagen de arte visual">
+                        <img src="arte visual.jpeg" class="img" alt="imagen de arte visual">
                     </div>
                     <div class="texto-box">Las artes visuales son expresiones artísticas creadas para ser apreciadas con la vista. Incluyen obras en dos y tres dimensiones, como pinturas, dibujos, esculturas y fotografías.</div>
                 </div>
@@ -108,11 +100,10 @@
                 <h3>LA NOCHE ESTRELLADA</h3>
                 <p>“La noche estrellada” fue pintada por Vincent van Gogh en 1889, mientras estaba internado voluntariamente en el hospital psiquiátrico de Saint-Rémy-de-Provence, en Francia. La obra muestra un cielo nocturno lleno de remolinos, estrellas brillantes y un gran movimiento, visto desde la ventana de su habitación en el asilo.</p>
                 
-                <!-- En la sección de detalles de la página principal -->
-            <div class="botones">
-                <a href="compra.html" class="btn-comprar">Comprar</a>
-                <button>Favoritos</button>
-            </div>
+                <div class="botones">
+                    <a href="Comprar.html" class="btn-comprar">Comprar</a>
+                    <button class="btn-favorito">★ Favorito</button>
+                </div>
                 
                 <button class="btn-sec">Compartir</button>
             </div>
@@ -120,30 +111,29 @@
     </main>
 
     <footer class="footer">
-        <div class="footer-box">
-            <h4>CONTACTO</h4>
-            <div class="line"></div>
-            <p>correo@empanada.com</p>
-            <p>+000 000 000</p>
-            <p>Dirección aquí</p>
-        </div>
-        
-        <div class="footer-box">
-            <h4>REGISTROS</h4>
-            <div class="line"></div>
-            <input type="email" placeholder="Ingresa tu correo">
-            <button class="btn-sub">SUSCRIBIRSE</button>
-        </div>
-        
-        <div class="footer-box">
-            <h4>SÍGUENOS</h4>
-            <div class="line"></div>
-            <button class="btn-social">INSTAGRAM</button>
-            <button class="btn-social">FACEBOOK</button>
-            <button class="btn-social">TWITTER</button>
-            <button class="btn-social">PINTEREST</button>
-        </div>
-    </footer>
+    <div class="footer-box">
+        <h4>CONTACTO</h4>
+        <div class="line"></div>
+        <p>correo@empanada.com</p>
+        <p>+000 000 000</p>
+        <p>Dirección aquí</p>
+    </div>
+
+
+
+    <div class="footer-box">
+        <h4>SÍGUENOS</h4>
+        <div class="line"></div>
+
+        <!-- BOTONES CORREGIDOS -->
+     <a class="btn-social" href="https://www.instagram.com/" target="_blank">Instagram</a>
+     <a class="btn-social" href="https://www.facebook.com/" target="_blank">Facebook</a>
+     <a class="btn-social" href="https://twitter.com/" target="_blank">Twitter</a>
+     <a class="btn-social" href="https://www.pinterest.com/" target="_blank">Pinterest</a>
+
+    </div>
+</footer>
+
     
     <div class="legal">
         <span>© 2025 GALERY ART</span>
@@ -152,7 +142,6 @@
             <a href="#">TÉRMINOS</a>
         </div>
     </div>
-    
-    <script src="scriptGalery.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

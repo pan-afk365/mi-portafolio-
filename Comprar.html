@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - GALERY ART</title>
+    <link rel="stylesheet" href="compra.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <div class="compra-container">
+        <!-- Header con Logo -->
+        <header class="compra-header">
+            <div class="logo-section">
+                <!-- LOGO AQUÍ -->
+                <img src="Elegant logo for an .png" alt="Logo GALERY ART" class="logo-img">
+                <div class="logo-text">
+                    <h1 class="logo-compra">GALERY ART</h1>
+                    <span class="tagline">Tu Compra</span>
+                </div>
+            </div>
+            <div class="user-section">
+                <span class="user-name">Nd. Cessus Cassus</span>
+                <span class="current-step">Información de Envío</span>
+            </div>
+        </header>
+
+        <main class="compra-main">
+            <div class="compra-grid">
+                <!-- Columna Izquierda - Resumen de Compra -->
+                <div class="col-resumen">
+                    <div class="resumen-card">
+                        <h2 class="obra-title">LA NOCHE ESTRELLADA</h2>
+                        <p class="obra-details">
+                            Vincent van Gogh - 1889<br>
+                            Óleo sobre lienzo - 73.7 x 92.1 cm
+                        </p>
+                        
+                        <div class="precios-section">
+                            <div class="precio-item">
+                                <span class="label">SUBTOTAL</span>
+                                <span class="valor">$2,450,000 USD</span>
+                            </div>
+                            <div class="precio-item">
+                                <span class="label">Envío</span>
+                                <span class="valor">$0,000 USD</span>
+                            </div>
+                            <div class="precio-item">
+                                <span class="label">Seguro</span>
+                                <span class="valor">$10,000 USD</span>
+                            </div>
+                            <div class="precio-item total">
+                                <span class="label">TOTAL</span>
+                                <span class="valor">$2,465,000 USD</span>
+                            </div>
+                        </div>
+                        
+                        <div class="beneficios">
+                            <div class="beneficio-item">
+                                <i class="bi bi-check-circle"></i>
+                                <div class="beneficio-texto">
+                                    <strong>Certificado de autenticidad</strong>
+                                    <p>Incluido con tu compra</p>
+                                </div>
+                            </div>
+                            <div class="beneficio-item">
+                                <i class="bi bi-check-circle"></i>
+                                <div class="beneficio-texto">
+                                    <strong>Envío asegurado</strong>
+                                    <p>Rastreo en tiempo real</p>
+                                </div>
+                            </div>
+                            <div class="beneficio-item">
+                                <i class="bi bi-check-circle"></i>
+                                <div class="beneficio-texto">
+                                    <strong>Garantía de devolución</strong>
+                                    <p>14 días desde la recepción</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha - Formulario -->
+                <div class="col-formulario">
+                    <div class="form-card">
+                        <h3 class="form-title">Información de Envío</h3>
+                        
+                        <form id="compraForm" class="form-envio">
+                            <!-- Nombre completo -->
+                            <div class="form-group">
+                                <label for="nombre" class="form-label">
+                                    Nombre completo *
+                                </label>
+                                <input type="text" id="nombre" name="nombre" class="form-input" required>
+                                <div class="error-message" id="error-nombre"></div>
+                            </div>
+
+                            <!-- Email y Teléfono -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email" class="form-label">
+                                        Email *
+                                    </label>
+                                    <input type="email" id="email" name="email" class="form-input" required>
+                                    <div class="error-message" id="error-email"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="telefono" class="form-label">
+                                        Teléfono *
+                                    </label>
+                                    <input type="tel" id="telefono" name="telefono" class="form-input" required>
+                                    <div class="error-message" id="error-telefono"></div>
+                                </div>
+                            </div>
+
+                            <!-- Dirección -->
+                            <div class="form-group">
+                                <label for="direccion" class="form-label">
+                                    Dirección *
+                                </label>
+                                <input type="text" id="direccion" name="direccion" class="form-input" required>
+                                <div class="error-message" id="error-direccion"></div>
+                            </div>
+
+                            <!-- Ciudad y Código Postal -->
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="ciudad" class="form-label">
+                                        Ciudad *
+                                    </label>
+                                    <input type="text" id="ciudad" name="ciudad" class="form-input" required>
+                                    <div class="error-message" id="error-ciudad"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="postal" class="form-label">
+                                        Código Postal *
+                                    </label>
+                                    <input type="text" id="postal" name="postal" class="form-input" required>
+                                    <div class="error-message" id="error-postal"></div>
+                                </div>
+                            </div>
+
+                            <!-- País -->
+                            <div class="form-group">
+                                <label for="pais" class="form-label">
+                                    País *
+                                </label>
+                                <select id="pais" name="pais" class="form-select" required>
+                                    <option value="">Seleccionar país</option>
+                                    <option value="mx">México</option>
+                                    <option value="us">Estados Unidos</option>
+                                    <option value="es">España</option>
+                                    <option value="ar">Argentina</option>
+                                    <option value="co">Colombia</option>
+                                </select>
+                                <div class="error-message" id="error-pais"></div>
+                            </div>
+
+                            <!-- Recomendaciones -->
+                            <div class="form-group">
+                                <label for="recomendaciones" class="form-label">
+                                    ¿Alguna recomendación?
+                                </label>
+                                <textarea id="recomendaciones" name="recomendaciones" class="form-textarea" rows="3"></textarea>
+                            </div>
+
+                            <!-- Método de Pago -->
+                            <div class="metodo-pago">
+                                <h4 class="metodo-title">Método de Pago</h4>
+                                <div class="opciones-pago">
+                                    <label class="radio-option">
+                                        <input type="radio" name="pago" value="tarjeta" checked>
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Tarjeta de crédito/débito</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="pago" value="transferencia">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">Transferencia bancaria</span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="pago" value="paypal">
+                                        <span class="radio-custom"></span>
+                                        <span class="radio-text">PayPal</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Términos y Condiciones -->
+                            <div class="terminos">
+                                <label class="checkbox-option">
+                                    <input type="checkbox" id="terminos" name="terminos" required>
+                                    <span class="checkbox-custom"></span>
+                                    <span class="checkbox-text">
+                                        Acepto los términos y condiciones y la política de privacidad
+                                    </span>
+                                </label>
+                                <div class="error-message" id="error-terminos"></div>
+                            </div>
+
+                            <!-- Botón Finalizar -->
+                            <button type="submit" class="btn-finalizar" id="btnFinalizar">
+                                <span class="btn-text">FINALIZAR COMPRA</span>
+                                <span class="btn-loading">
+                                    <i class="bi bi-arrow-repeat"></i>
+                                </span>
+                            </button>
+                        </form>
+
+                        <!-- Enlace Volver -->
+                        <a href="index.html" class="btn-volver">
+                            <i class="bi bi-arrow-left"></i>
+                            Volver a la galería
+                        </a>
+
+                        <!-- Texto Seguridad -->
+                        <p class="texto-seguridad">
+                            <i class="bi bi-shield-lock"></i>
+                            Su pago será procesado de manera segura
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer de la compra -->
+        <footer class="compra-footer">
+            <div class="footer-content">
+                <!-- Logo también en el footer -->
+                <div class="footer-logo">
+                    <img src="Elegant logo for an .png" alt="Logo GALERY ART" class="footer-logo-img">
+                    <span class="footer-brand">GALERY ART</span>
+                </div>
+                <p class="copyright">© 2025 GALERY ART - Todos los derechos reservados</p>
+                <div class="footer-links">
+                    <a href="#" class="footer-link">Términos y Condiciones</a>
+                    <a href="#" class="footer-link">Política de Privacidad</a>
+                    <a href="#" class="footer-link">Aviso Legal</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Script de Compra -->
+    <script src="compra.js"></script>
+</body>
+</html>
